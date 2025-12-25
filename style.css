@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.portfolio-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navlist {
+    display: flex;
+    gap: 3.5rem;
+    height: 15vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.navlist li {
+    list-style: none;
+}
+
+.navlist li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+}
+
+.navlist li a.active::after,
+.navlist li a:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #5DB9EE;
+    left: 0;
+    bottom: -5px;
+}
+
+/* ===== LEFT & RIGHT SECTIONS ===== */
+.left-container,
+.right-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.left-container {
+    background: #262525;
+    width: 70%;
+    padding-left: 3rem;
+}
+
+.right-container {
+    background: linear-gradient(-45deg, #3877FF, #262525 70%);
+    width: 30%;
+    justify-content: center;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.icons .fa-brands {
+    color: #bbb;
+    font-size: 1.7rem;
+    transition: 0.3s ease;
+}
+
+.icons .fa-brands:hover {
+    cursor: pointer;
+    background: linear-gradient(#fff, #3877FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    margin-left: 4rem;
+}
+
+.content .intro {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.content .intro span {
+    color: #5DB9EE;
+}
+
+.content h1 {
+    font-size: 4rem;
+    color: #5DB9EE;
+    margin: 0.5rem 0;
+}
+
+.content .detail {
+    font-size: 1rem;
+    color: #fff;
+    max-width: 38rem;
+    margin: 1.1rem 0 3rem 0;
+    line-height: 1.8rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn-container button {
+    border: 2px solid #5DB9EE;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.btn-primary {
+    background: #5DB9EE;
+    color: #262525;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #5DB9EE;
+    margin-left: 2rem;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: #5DB9EE;
+}
+
+.btn-outline:hover {
+    background: #5DB9EE;
+    color: #262525;
+}
+
+/* ===== RIGHT IMAGE ===== */
+.image-wrapper {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(93, 185, 238, 0.8);
+}
+
+.image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 40px #5DB9EE;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* ===== BACKGROUND CIRCLES ===== */
+.design .circle {
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.design .circle:nth-child(1) {
+    background: linear-gradient(90deg, transparent 50%, #262525 50%);
+    width: 22rem;
+}
+
+.design .circle:nth-child(2) {
+    width: 19rem;
+    background-image: url("profile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;      /* or contain */
+    background-position: center;
+    border: .1rem solid white;
+    box-shadow: 
+    0 0 1rem #fff,
+   inset 0 0 1rem #fff,
+   0 0 2rem #3877FF,
+   inset 0 0 2rem #3877FF,
+   0 0 4rem #3877FF,
+   inset 0 0 4rem #3877FF
+   ;
+}
+.navlist li a::after, .navlist .active::after{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -5px;
+    transform: scalex(0);
+    transform-origin: bottom right;
+    transition: transform .5s;
+}
+.navlist li a:hover::after, .navlist .active::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
